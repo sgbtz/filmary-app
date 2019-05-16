@@ -1,0 +1,87 @@
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2329;
+}
+mat-card {
+  width: 30%;
+}
+mat-card-title {
+  font-size: 1.6em!important;
+  color: #2a2329;
+}
+mat-card-subtitle {
+  font-size: 1.1em;
+}
+mat-card-content {
+  width: 100%;
+  padding-top: 5%;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.form-data {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+mat-card-content mat-form-field {
+  width: 47.5%;
+}
+mat-card-content .email-confirmation, .password-confirmation {
+  width: 47.5%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.alert-danger {
+  font-size: 11px;
+  color: red;
+  margin-top: 5%;
+}
+ .email-confirmation mat-form-field, .password-confirmation mat-form-field {
+  width: 100%;
+}
+.gender-group {
+  width: 100%;
+}
+.gender-group mat-radio-group {
+  margin: 2.5% 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.sign-in {
+  color: #5cffcd;
+}
+.sign-in:hover {
+  cursor: pointer;
+}
+.signup-btn {
+  margin-top: 5%;
+  background-color: #5cffcd;
+  color: #2a2329;
+  font-weight: bold;
+  width: 40%;
+}
+/* Material */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #5cffcd;
+}
+::ng-deep .mat-input-element {
+  caret-color: #5cffcd;
+}
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #5cffcd;
+}

@@ -1,0 +1,78 @@
+<section>
+  <mat-card class="mat-elevation-z5">
+    <mat-card-header>
+      <mat-card-title>
+        Register
+      </mat-card-title>
+      <mat-card-subtitle>
+        Create new user account
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-content>
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        <div class="form-data">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" name="username" placeholder="Username">
+          </mat-form-field>
+          <mat-form-field class="birth-date" appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [max]="maxDate"  [matDatepicker]="birthDate" placeholder="Birth Date" id="birthDate" formControlName="birthDate" name="birthDate">
+            <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+            <mat-datepicker #birthDate startView="multi-year"></mat-datepicker>
+          </mat-form-field>
+          <!--<mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" name="name" placeholder="Name">
+          </mat-form-field>-->
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" name="email" placeholder="Email">
+          </mat-form-field>
+          <div class="email-confirmation">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Email</mat-label>
+              <input matInput formControlName="confirmEmail" name="confirmEmail" placeholder="Confirm Email">
+              <div *ngIf="signupForm.errors?.emailConfirmation" class="alert alert-danger">
+                Email doesn't match
+              </div>
+            </mat-form-field>
+          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" name="password" placeholder="Password">
+          </mat-form-field>
+          <div class="password-confirmation">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput type="password" formControlName="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+              <div *ngIf="signupForm.errors?.passwordConfirmation" class="alert alert-danger">
+                Password doesn't match
+              </div>
+            </mat-form-field>
+          </div>
+          <!--<mat-form-field appearance="outline">
+            <mat-label>Nationality</mat-label>
+            <mat-select formControlName="nationality" name="nationality" placeholder="Nationality">
+             <mat-option *ngFor="let nation of nations" [value]="nation">
+               {{nation}}
+             </mat-option>
+           </mat-select>
+          </mat-form-field>
+          <div class="gender-group">
+            <mat-radio-group formControlName="gender" name="gender">
+              <mat-radio-button value="1">Male</mat-radio-button>
+              <mat-radio-button value="2">Female</mat-radio-button>
+              <mat-radio-button value="3">Other</mat-radio-button>
+            </mat-radio-group>
+          </div>-->
+        </div>
+        <p>
+          Do you already have an account? <span class="sign-in" (click)="signIn()">Sign In</span>
+        </p>
+        <button mat-raised-button type="submit" class="signup-btn">Ready to go! </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

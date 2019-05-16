@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Sign In or <span class="sign-up" (click)="router.navigate(['/register']); dialogRef.close();">Register</span></h1>
+<mat-divider></mat-divider>
+<form #loginForm="ngForm" (ngSubmit)="onLogin()">
+  <mat-dialog-content>
+      <mat-form-field [hideRequiredMarker]="true">
+        <input matInput placeholder="Email or username" [(ngModel)]="loginInfo.login" #login="ngModel"  name="login" required>
+      </mat-form-field>
+      <div *ngIf="login.invalid && (login.dirty || login.touched)"
+    class="alert alert-danger">
+        <div *ngIf="login.errors.required" class="required-error">
+          Email or username is required.
+        </div>
+      </div>
+      <mat-form-field [hideRequiredMarker]="true">
+        <input matInput type="password" placeholder="Password" [(ngModel)]="loginInfo.password" #password="ngModel" name="password" required>
+      </mat-form-field>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert alert-danger">
+        <div *ngIf="password.errors.required" class="required-error">
+          Password is required.
+        </div>
+      </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <a class="forgot-password" href="#">Forgot password?</a>
+    <button mat-raised-button type="submit" class="login-btn">Login</button>
+  </mat-dialog-actions>
+</form>

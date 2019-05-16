@@ -1,3 +1,13 @@
-<p>
-  {{ test }}
-</p>
+<header>
+  <h1 class="logo">filmary</h1>
+  <div class="buttons">
+    <button mat-raised-button class="signup-but" routerLink="/register">Join!</button>
+    <button mat-stroked-button class="login-but" (click)="openLogin()">Sign in</button>
+  </div>
+</header>
+<section class="mat-typography">
+  <div class="motto">
+    <h1>Lights! Camera! Action!</h1>
+    <h2>Now you can have your own film library</h2>
+  </div>
+</section>
