@@ -1,0 +1,20 @@
+<section class="mat-typography">
+  <mat-spinner *ngIf="!(user && films)"></mat-spinner>
+  <mat-sidenav-container class="sidenav-container" *ngIf="(user && films)">
+    <mat-sidenav mode="side" class="sidenav" mode="side" opened>
+
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <div class="fixed-top">
+        <mat-form-field class="search-input">
+          <input matInput placeholder="Search" />
+        </mat-form-field>
+      </div>
+      <app-library [films]="films">
+      </app-library>
+      <button mat-icon-button class="add-film-btn" (click)="addFilm()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>

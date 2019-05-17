@@ -13,6 +13,14 @@
       <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
         <div class="form-data">
           <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" name="name" placeholder="Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" name="lastName" placeholder="Last Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
             <mat-label>Username</mat-label>
             <input matInput formControlName="username" name="username" placeholder="Username">
           </mat-form-field>
@@ -22,10 +30,6 @@
             <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
             <mat-datepicker #birthDate startView="multi-year"></mat-datepicker>
           </mat-form-field>
-          <!--<mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput formControlName="name" name="name" placeholder="Name">
-          </mat-form-field>-->
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" name="email" placeholder="Email">
@@ -71,7 +75,7 @@
         <p>
           Do you already have an account? <span class="sign-in" (click)="signIn()">Sign In</span>
         </p>
-        <button mat-raised-button type="submit" class="signup-btn">Ready to go! </button>
+        <button mat-raised-button type="submit" class="signup-btn" [disabled]="!signupForm.valid">Ready to go! </button>
       </form>
     </mat-card-content>
   </mat-card>

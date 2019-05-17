@@ -26,9 +26,8 @@ export class SignupComponent implements OnInit {
     password: new FormControl("",[Validators.required]),
     confirmPassword: new FormControl("",[Validators.required]),
     name: new FormControl("",[Validators.required]),
-    gender: new FormControl(),
+    lastName: new FormControl("",[Validators.required]),
     birthDate: new FormControl("",[Validators.required]),
-    nationality: new FormControl()
   }, { validators: [ confirmEmailValidator, confirmPasswordValidator ] });
 
   constructor(
@@ -43,18 +42,18 @@ export class SignupComponent implements OnInit {
     let signupInfo: Signup = new Signup({
       username: this.signupForm.value.username,
       email: this.signupForm.value.email,
+      lastName: this.signupForm.value.lastName,
       password: this.signupForm.value.password,
       name: this.signupForm.value.name,
-      gender: this.signupForm.value.gender,
       birthDate: this.signupForm.value.birthDate,
-      nationality: this.signupForm.value.nationality
     });
 
 
     this.loginService.createUser(signupInfo)
       .subscribe(res => {
+        console.log(res)
         localStorage.setItem("username", res.login);
-        this.router.navigate(["/home/login"]);
+        this.router.navigate(["/dashboard"]);
       });
   }
   signIn() {

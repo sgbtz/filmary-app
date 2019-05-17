@@ -15,6 +15,7 @@ import { AuthService } from "../services/auth.service";
 export class LoginComponent {
 
   loginInfo: Login = new Login({ login: localStorage.getItem("username")});
+  failToast: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<LoginComponent>,
@@ -26,10 +27,11 @@ export class LoginComponent {
 
   onLogin() {
     this.loginService.loginUser(this.loginInfo).subscribe(loginResponse => {
-      console.log(loginResponse)
       if (loginResponse.success) {
         this.authService.login(loginResponse._id,loginResponse.username, loginResponse.token);
-        this.dialogRef.close();
+        this.dialogRef.close(loginResponse.success);
+      } else {
+        this.failToast = true;
       }
     });
   }

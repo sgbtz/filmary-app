@@ -4,9 +4,8 @@ export class Signup {
   public email: string;
   public password: string;
   public name: string;
+  public lastName: string;
   public birthDate: Date;
-  public gender: number;
-  public nationality: string;
 
 
   constructor(signupInfo) {
@@ -14,9 +13,8 @@ export class Signup {
     this.email = signupInfo.email;
     this.password = signupInfo.password;
     this.name = signupInfo.name;
+    this.lastName = signupInfo.lastName;
     this.birthDate = signupInfo.birthDate;
-    this.gender = signupInfo.gender;
-    this.nationality = signupInfo.nationality;
   }
 
 }

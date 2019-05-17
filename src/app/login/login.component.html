@@ -20,6 +20,9 @@
           Password is required.
         </div>
       </div>
+      <div *ngIf="failToast" class="validation-error">
+        Email/username or password is wrong.
+      </div>
   </mat-dialog-content>
   <mat-dialog-actions>
     <a class="forgot-password" href="#">Forgot password?</a>

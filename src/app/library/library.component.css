@@ -1,0 +1,11 @@
+.films-list {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.film {
+  width: 2em;
+  height: 3em;
+}
