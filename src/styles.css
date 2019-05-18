@@ -16,13 +16,13 @@ html, body {
 .mat-input-element {
   caret-color: #5cffcd;
 }
-.mat-form-field-appearance-legacy .mat-form-field-label {
+.dashboard .mat-form-field-appearance-legacy .mat-form-field-label {
   color: rgba(255,255,255, 0.7);
 }
-.cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
+.dashboard .cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
   color: white;
 }
-.mat-form-field-appearance-legacy .mat-form-field-underline {
+.dashboard .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: rgba(255,255,255, 0.7);
 }
 .mat-datepicker-toggle-active {

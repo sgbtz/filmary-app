@@ -5,7 +5,7 @@ section {
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-color: #2a2329;
+  background-color: #283740;
 }
 mat-card {
   width: 30%;
