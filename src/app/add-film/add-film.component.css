@@ -1,0 +1,36 @@
+h1 {
+  font-size: 1.5em;
+}
+.sign-up {
+  color: #2a2329;
+}
+.sign-up:hover {
+  cursor: pointer;
+}
+mat-dialog-content {
+  padding-top: 15px;
+}
+mat-dialog-content mat-form-field {
+  width: 100%;
+}
+mat-dialog-actions {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+mat-dialog-actions .forgot-password {
+  margin-right: 5%;
+  text-decoration: none;
+  color: #373e44;
+}
+mat-dialog-actions .forgot-password:hover {
+  color: #5cffcd;
+}
+mat-dialog-actions .login-btn {
+  background-color: #5cffcd;
+  color: #2a2329;
+  font-weight: bold;
+}

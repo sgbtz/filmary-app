@@ -1,4 +1,18 @@
-<section class="films-list">
-  <mat-card *ngFor="let film of films" class="film">
+<section class="films-list" *ngIf="tmdbConf">
+  <mat-card *ngFor="let film of films" class="film mat-elevation-z5">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <span class="punctuation">{{film.vote_average}}</span>
+        <span class="vote-num"><mat-icon>rate_review</mat-icon>{{film.vote_count}}</span>
+      </div>
+      <mat-card-title class="title">{{film.title | slice:0:22}}<span *ngIf="film.title.length > 30">...</span></mat-card-title>
+      <mat-card-subtitle class="year">{{film.release_date | date:"yyyy"}}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="film.poster_path" class="poster" mat-card-image src="{{ tmdbConf.images.secure_base_url + 'original/' + film.poster_path }}" />
+    <img *ngIf="!film.poster_path" class="poster" mat-card-image src="assets/images/broken-img.png"/>
+    <mat-card-actions class="actions">
+      <button *ngIf="!film.added" mat-raised-button class="add-btn" (click)="addFilmToLibrary(film)">Add to library</button>
+      <button *ngIf="film.added" class="remove-btn" mat-raised-button (click)="removeFilmFromLibrary(film)">Remove from library</button>
+    </mat-card-actions>
   </mat-card>
 </section>

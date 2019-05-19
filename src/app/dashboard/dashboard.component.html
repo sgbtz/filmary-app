@@ -2,16 +2,21 @@
   <mat-spinner *ngIf="!(user && films)"></mat-spinner>
   <mat-sidenav-container class="sidenav-container" *ngIf="(user && films)">
     <mat-sidenav mode="side" class="sidenav" mode="side" opened>
-
+      <h1 class="logo">filmary</h1>
+      <div class="user-profile">
+        <span class="mat-body">Hello, {{user.name}}</span>
+        <button mat-icon-button class="logout-btn" (click)="logout()" matTooltip="Log out">
+          <mat-icon>exit_to_app</mat-icon> Log out
+        </button>
+      </div>
     </mat-sidenav>
     <mat-sidenav-content class="content">
       <div class="fixed-top">
-        <mat-form-field class="search-input">
-          <input matInput placeholder="Search" />
+        <mat-form-field class="search-input" [formGroup]="searchForm">
+          <input matInput placeholder="Search" formControlName="title" name="title" />
         </mat-form-field>
       </div>
-      <app-library [films]="films">
-      </app-library>
+      <app-library [films]="filteredFilms | async"></app-library>
       <button mat-icon-button class="add-film-btn" (click)="addFilm()">
         <mat-icon>add</mat-icon>
       </button>

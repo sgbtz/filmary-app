@@ -11,26 +11,42 @@ section {
   min-height: 100vh;
 }
 .sidenav {
-  width: 10%;
+  width: 15%;
   min-height: 100vh;
   background-color: #192227;
   -moz-box-shadow:    1px 0 60px #192227;
   -webkit-box-shadow: 1px 0 60px #192227;
   box-shadow:         1px 0 60px #192227;
+  padding: 1% 2% 1% 2%;
+}
+.logo {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #5cffcd;
+  font-size: 2.5vw;
+}
+.user-profile {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+}
+.logout-btn {
+  color: white;
 }
 .content {
-  width: 90%;
+  width: 85%;
   min-height: 100vh;
   background-color: #283740;
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2% 5%;
 }
 .fixed-top {
-  position: fixed;
-  top: 5%;
-  left: 20%;
+
   z-index: +1;
   display: flex;
   flex-flow: row;
@@ -65,4 +81,5 @@ section {
   color:  white;
 }
 app-library {
+  width: 100%;
 }

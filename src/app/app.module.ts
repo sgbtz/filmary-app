@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFittextModule } from 'angular-fittext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibraryComponent } from './library/library.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import { AddFilmComponent } from './add-film/add-film.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { LibraryComponent } from './library/library.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    LibraryComponent
+    LibraryComponent,
+    CatalogueComponent,
+    AddFilmComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +35,12 @@ import { LibraryComponent } from './library/library.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFittextModule
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    AddFilmComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

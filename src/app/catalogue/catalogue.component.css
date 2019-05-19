@@ -1,0 +1,13 @@
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #283740;
+}
+
+app-library {
+  width: 97.5%;
+}
